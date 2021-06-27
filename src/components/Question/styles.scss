@@ -10,6 +10,19 @@
     margin-top: 8px;
   }
 
+  &.highlighted {
+    background: #f6f4fc;
+    border: 1px solid #835afd;
+
+    footer .user-info span {
+      color: #29292e;
+    }
+  }
+
+  &.answered {
+    background: #e9e9e9;
+  }
+
   p {
     color: #29292e;
   }
@@ -19,22 +32,53 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 24px;
-  }
 
-  .user-info {
-    display: flex;
-    align-items: center;
+    .user-info {
+      display: flex;
+      align-items: center;
 
-    img {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+
+      span {
+        margin-left: 8px;
+        color: #737380;
+        font-size: 14px;
+      }
     }
 
-    span {
-      margin-left: 8px;
-      color: #737380;
-      font-size: 14px;
+    > div {
+      display: flex;
+      gap: 16px;
+    }
+
+    button {
+      border: 0;
+      background-color: transparent;
+      cursor: pointer;
+      transition: filter 0.2;
+
+      &.like-button {
+        display: flex;
+        align-items: flex-end;
+        color: #737380;
+        gap: 8px;
+
+        &.liked {
+          color: #676dd7;
+
+          svg path {
+            stroke: #676dd7;
+          }
+        }
+
+        &:hover {
+          filter: brightness(0.7);
+        }
+      }
     }
   }
 }
